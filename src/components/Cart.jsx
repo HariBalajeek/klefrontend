@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "./Cart.css";
-import { API_URL } from "./config";
+import { API_URL } from "../config";
 
 
 const Cart = () => {

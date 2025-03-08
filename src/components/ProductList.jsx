@@ -1,6 +1,6 @@
 import axios from "axios";
 import "./ProductList.css";
-import { API_URL } from "./config";
+import { API_URL } from "../config";
 
 const ProductList = () => {
   const products = [
