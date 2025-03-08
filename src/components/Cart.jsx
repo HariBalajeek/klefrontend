@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "./Cart.css";
+import { API_URL } from "./config";
+
 
 const Cart = () => {
   const [cart, setCart] = useState([]);
@@ -17,7 +19,7 @@ const Cart = () => {
     }
 
     try {
-      const response = await axios.get("http://localhost:5000/cart", {
+      const response = await axios.get(`${API_URL}/cart`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setCart(response.data);
@@ -36,7 +38,7 @@ const Cart = () => {
 
     try {
       await axios.post(
-        "http://localhost:5000/cart/remove",
+        `${API_URL}/cart/remove`,
         { productId },
         {
           headers: { Authorization: `Bearer ${token}` },

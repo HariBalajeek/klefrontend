@@ -1,5 +1,6 @@
 import axios from "axios";
 import "./ProductList.css";
+import { API_URL } from "./config";
 
 const ProductList = () => {
   const products = [
@@ -31,7 +32,7 @@ const ProductList = () => {
   
     try {
       await axios.post(
-        "http://localhost:5000/cart/add",
+        `${API_URL}/cart/add`,
         {
           productId: product.id, // ✅ Ensure this is sent
           name: product.name,
